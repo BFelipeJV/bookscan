@@ -1,0 +1,268 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.scanner-section, .book-list {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+#scanner-container {
+    width: 480px; /* Ajusta el ancho */
+    height: 480px; /* Ajusta la altura para hacerlo más cuadrado */
+    background-color: #ccc; /* Color de fondo para la cámara */
+    margin: 0 auto; /* Centra el contenedor */
+    border: 2px solid #333; /* Borde para el contenedor */
+    position: relative;
+    overflow: hidden;
+}
+#scanner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#scanner-guide {
+    width: 80%;
+    height: 60%;
+    border: 2px solid #ecf0f1;
+    box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+}
+button {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+th {
+    background-color: #34495e;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+tr:last-child td {
+    border-bottom: none;
+}
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+tr:hover {
+    background-color: #e8f4f8;
+}
+#scan-result {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #e8f5e9;
+    border-left: 5px solid #4caf50;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.export-buttons {
+    margin-top: 20px;
+    text-align: right;
+}
+.loading {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+    color: #7f8c8d;
+}
+.loading:after {
+    content: '.';
+    animation: dots 1.5s steps(5, end) infinite;
+}
+@keyframes dots {
+    0%, 20% {
+        color: rgba(0,0,0,0);
+        text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0);
+    }
+    40% {
+        color: #7f8c8d;
+        text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0);
+    }
+    60% {
+        text-shadow: .25em 0 0 #7f8c8d, .5em 0 0 rgba(0,0,0,0);
+    }
+    80%, 100% {
+        text-shadow: .25em 0 0 #7f8c8d, .5em 0 0 #7f8c8d;
+    }
+}
+.book-cover {
+    width: 60px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.price-trend {
+    font-size: 12px;
+    margin-left: 5px;
+}
+.price-up { color: #e74c3c; }
+.price-down { color: #2ecc71; }
+
+/* Ajustes adicionales para asegurar que la tabla se vea completa */
+.book-list {
+    flex: 1 1 100%;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    min-width: 800px; /* Asegura que la tabla no se colapse en pantallas pequeñas */
+}
+
+/* Ajustes adicionales para asegurar que la tabla se vea completa */
+.book-list {
+    flex: 1 1 100%;
+    overflow-x: auto;
+    max-height: 400px; /* Ajusta la altura máxima según sea necesario */
+    overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+}
+
+/* Ajustes adicionales para asegurar que la tabla se vea completa */
+.book-list {
+    flex: 1 1 100%;
+    overflow-x: auto;
+    max-height: 400px; /* Ajusta la altura máxima según sea necesario */
+    overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+    display: flex;
+    flex-direction: column;
+}
+table {
+    width: 100%;
+    min-width: 800px; /* Asegura que la tabla no se colapse en pantallas pequeñas */
+    flex: 1;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    padding: 10px;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Estilos para imágenes */
+.book-cover {
+    width: 60px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+}
+
+/* Estilos para botones */
+button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Botones ocupan todo el ancho */
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    table {
+        font-size: 14px; /* Reduce el tamaño de la fuente en móviles */
+    }
+
+    .book-cover {
+        width: 40px; /* Ajusta el tamaño de la imagen en móviles */
+    }
+
+    button {
+        padding: 8px; /* Reduce el padding en móviles */
+    }
+}
+
+/* Estilos para dispositivos móviles */
+body.mobile {
+    background-color: #f0f0f0; /* Color de fondo para móviles */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+}
+
+/* Estilos para PC */
+body.desktop {
+    background-color: #ffffff; /* Color de fondo para PC */
+    font-size: 16px; /* Tamaño de fuente más grande */
+}
+
+/* Otros estilos... */

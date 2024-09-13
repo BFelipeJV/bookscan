@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Escáner de libros profesional para gestionar y exportar información de libros.">
+    <title>Escáner de Libros - Versión Profesional</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <!-- Cargar scripts al final del body para mejorar el rendimiento -->
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Escáner de Libros - Versión Profesional</h1>
+        </div>
+        <div class="content">
+            <div class="scanner-section">
+                <div id="scanner-container">
+                    <div id="scanner-overlay">
+                        <div id="scanner-guide"></div>
+                    </div>
+                </div>
+                <button id="toggle-camera" aria-label="Activar cámara">Actívame</button>
+                <div id="scan-result"></div>
+                <div class="loading">Cargando datos del libro</div>
+                
+                <!-- Campo de entrada para el ISBN escaneado -->
+                <input type="text" id="scanned-isbn" placeholder="Código ISBN escaneado" readonly />
+                
+            </div>
+            <div class="book-list">
+                <h2>Libros Escaneados</h2>
+                <table id="book-table">
+                    <thead>
+                        <tr>
+                            <th>Portada</th>
+                            <th>Título</th>
+                            <th>ISBN</th>
+                            <th>Editorial</th>
+                            <th>Año</th>
+                            <th>Link a Precio Nuevo (CLP)</th>
+                            <th>Link a Precio Usado (CLP)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="export-buttons">
+                    <button id="export-excel" aria-label="Exportar a Excel">Exportar a Excel</button>
+                    <button id="export-pdf" aria-label="Exportar a PDF">Exportar a PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
+    <script src="js/script.js"></script>
+    
+    <!-- Agregar el pie de página -->
+    <footer style="text-align: center; margin: 20px 0; color: #777;">
+        Creado en Chile por Pipo, 2024
+    </footer>
+    
+</body>
+</html>
